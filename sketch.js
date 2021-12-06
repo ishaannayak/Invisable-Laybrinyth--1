@@ -8,19 +8,19 @@ var gameState = 0
 var fireImg
 var desertFlag = false
 var oceanFlag = false
-var currX = 0; 
-var currY = 0;
-var currZ = -10;
+// var currX = 0; 
+// var currY = 0;
+// var currZ = -10;
 function preload(){
 caveImg = loadImage("Images/CAVEIMAGE.jpg")
 desertImg = loadImage("Images/desertimage.jpg")
 seaImg = loadImage("Images/seaimage.jpg")
 hunterAnimation = loadAnimation("Images/h1.png","Images/h2.png","Images/h3.png")
 diamondImg = loadImage("Images/diamond.png")
-fireImg = loadImage("images/fire.png")
+fireImg = loadImage("Images/fire.png")
 } 
 function setup(){
-    createCanvas(1920,920,WEBGL)
+    createCanvas(1920,920)
     cave = new Cave()
     desert = new Desert()
     ocean = new Ocean()
@@ -30,13 +30,13 @@ function setup(){
     desertWallGroup = new Group()
     seaWallGroup = new Group()
     fireGroup = new Group()
-    currCamera = createCamera(); 
-    currCamera.move(950, 450, 0)
+   // currCamera = createCamera(); 
+   // currCamera.move(950, 450, 0)
     
 }
 function draw(){
     if(gameState ===0){
-        background("blue")
+        background(caveImg)
         cave.display()
    
         drawSprites()
@@ -92,10 +92,10 @@ function draw(){
                 player.player.y = 500  
             }
     }
-    currCamera.move(currX, currY, currZ)
-    currX -=0.1; 
-    currY -=0.1; 
-    currZ -=.01;
+    //currCamera.move(currX, currY, currZ)
+   // currX -=0.1; 
+    //currY -=0.1; 
+    //currZ -=.01;
     //camera.position.x = player.player.x+800; camera.position.y = player.player.y;
 
 }
